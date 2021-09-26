@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/BebasNeueRegular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=2]
@@ -7,9 +7,21 @@
 size = 60
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.286275, 0.898039, 0.0627451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0862745, 0.223529, 0.85098, 1 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 24
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.917647, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.027451, 0.0196078, 0.0196078, 1 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -22,8 +34,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 300.0
+rect_rotation = -0.16255
 custom_fonts/font = SubResource( 1 )
-text = "Welcome! "
+custom_colors/font_color = Color( 0.839216, 0.635294, 0.0980392, 1 )
+custom_colors/font_outline_modulate = Color( 0.752941, 0.0705882, 0.0705882, 1 )
+text = "THE BOMBER"
 align = 1
 valign = 1
 __meta__ = {
@@ -35,7 +50,13 @@ margin_left = 412.0
 margin_top = 300.0
 margin_right = 612.0
 margin_bottom = 360.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0.768627, 0.0901961, 0.0901961, 1 )
+custom_colors/font_color = Color( 0.807843, 0.105882, 0.105882, 1 )
+custom_colors/font_color_hover = Color( 0.607843, 0.105882, 0.105882, 1 )
+custom_colors/font_color_pressed = Color( 0.901961, 0.0862745, 0.0862745, 1 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -46,11 +67,24 @@ margin_left = 412.0
 margin_top = 380.0
 margin_right = 612.0
 margin_bottom = 440.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 0.957
+anchor_bottom = 0.763
+margin_right = 40.0
+margin_bottom = 14.0
+rect_rotation = 0.221618
+text = "Avoid the flying Zeppelins and bomb the destroyer to get points! 
+Bomb the middle of the hull to sink the ship!"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

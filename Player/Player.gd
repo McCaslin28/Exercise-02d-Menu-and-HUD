@@ -19,9 +19,9 @@ func _ready():
 	VP = get_viewport().size
 
 func _physics_process(_delta):
-	position.x = wrapf(position.x,0,VP.x)
+	position.x = wrapf(position.x,0,VP.x) 
 	position.y = wrapf(position.y,0,VP.y)
-	rotation += get_rotation()*rotation_accel
+	rotation += get_rotation()*rotation_accel 
 	velocity += get_input()*acceleration
 	velocity = velocity.normalized() * clamp(velocity.length(),0,max_speed)
 	var collision = move_and_collide(velocity,false)
@@ -57,7 +57,7 @@ func die():
 func get_input():
 	var toReturn := Vector2.ZERO
 	if Input.is_action_pressed("forward"):
-		toReturn.y -= 1
+		toReturn.y -= -1
 		$Thrust.show()
 	else:
 		$Thrust.hide()
