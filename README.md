@@ -1,4 +1,4 @@
-# Project Name 2D Space shooter "The Bomber"
+# Project Name: 2D Space shooter "The Bomber"
 Context and date: 2D space shooter 
 Description: Destory the battleships and avoid the flying zeppelins to get a high score.
 
